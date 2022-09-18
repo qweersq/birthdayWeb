@@ -5,12 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Untuk Nevile</title>
+    <title>Untuk kamu(^_^)</title>
 
     <!-- font google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Poppins:wght@400;500;700&family=Short+Stack&display=swap"
+        rel="stylesheet">
 
     <!-- css -->
     <link rel="stylesheet" href="style.css">
@@ -20,6 +22,12 @@
 
     <!-- ballon floating -->
     <script src="ballon.js"></script>
+
+    <!-- confetti js -->
+    <script src="confetti.js"></script>
+
+    <!-- sweeetalert -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
@@ -27,30 +35,35 @@
         src="https://images.pexels.com/photos/586744/pexels-photo-586744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
         alt="">
 
+    <!-- WALLPAPER -->
+    <div id="wallpaper2">
+    </div>
+
     <!-- FLOATING BALLON -->
     <div id="ballooncontainer">
     </div>
 
-      <!-- Ganti Audio di sini --><audio src="https://qweersq.github.io/birthdayWeb/hbdjedagjedug.mp3" id="linkmp3"></audio>
-      <script>audio = new Audio('' + linkmp3.src);</script>
-    
+
+    <!-- Ganti Audio di sini --><audio src="https://qweersq.github.io/birthdayWeb/hbdjedagjedug.mp3"
+        id="linkmp3"></audio>
+    <script>audio = new Audio('' + linkmp3.src);</script>
+
 
     <div class="container">
         <div id="s1" class="slide1">
-            <p id="kalimat1">Hello, open the gift!!</p>
+            <p id="kalimat1">Pil Buka dong Kadonya !!!</p>
             <div id="gKado" class="kosong">
                 <img src="https://feeldreams.github.io/kadoin.png" />
             </div>
         </div>
-        <div class="slide2">
-
-        </div>
-        <div class="slide3">
-
-        </div>
 
     </div>
+    <div class="slide2">
+        <img id="happytext" class="textawal" src="assets/happytext.png" alt="">
+        <img id="birthdaytext" class="textawal" src="assets/birthdaytext.png" alt="">
+    </div>
     <script>
+
         // ==================================
         // *********** SLIDE 1 **************
         // ==================================
@@ -72,6 +85,7 @@
         document.getElementById("gKado").onclick = function () {
             s1.style = "transition: all 1s ease; transform: scale(0); ";
             setTimeout(slide2, 0)
+            setTimeout(munculbalon, 3000)
         }
 
         // ==================================
@@ -80,7 +94,24 @@
 
         function slide2() {
             audio.play();
+            document.getElementById("wallpaper2").style.display = "flex";
+            setTimeout(happybirthdaytext, 1000)
+        }
+
+        function happybirthdaytext() {
+            document.getElementById("happytext").className = "happyText";
+            document.getElementById("birthdaytext").className = "birthdayText";
+
+        }
+
+        function munculbalon() {
+            document.getElementById("confetti-canvas").style.animation = "confetti 4s";
+            document.getElementById("confetti-canvas").style.display = "block";
             document.getElementById("ballooncontainer").style.display = "flex";
+            setTimeout(alerttext, 3000)
+        }
+        function alerttext() {
+            swal("Yeayyy si Nevile Ultah", "Hehehe panjang umur yak, sehat selalu, jangan lupa traktiran");
         }
     </script>
 
