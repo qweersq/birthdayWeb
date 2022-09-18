@@ -1,0 +1,124 @@
+body {
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    background-color: black;
+    font-family: 'Poppins', sans-serif;
+}
+#wallpaper {
+    opacity: 30%;
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.container {
+    display: flex;
+    z-index: 1;
+}
+
+p {
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+@keyframes bounce {
+    0%   { transform: scale(0); -webkit-transform: scale(0); -moz-transform: scale(0); -ms-transform: scale(0); -o-transform: scale(0); }
+    50%  { transform: scale(1.1); -webkit-transform: scale(1.1); -moz-transform: scale(1.1); -ms-transform: scale(1.1); -o-transform: scale(1.1); }
+    100% { transform: scale(1); -webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); -o-transform: scale(1); }
+  }
+
+/* ==================================
+    ============= SLIDE 1 ==========
+ ==================================== */
+
+.slide1 {
+    display: block;
+    margin-top: 35vh;
+}
+
+.kosong {
+    display: flex;
+    justify-content: center;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+}
+
+.kadopng {
+    display: flex;
+    justify-content: center;
+    animation: bounce 1s;
+    transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    -ms-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    -webkit-animation:;
+}
+
+.slide1 img {
+    animation-delay: 2s;
+
+    width: 100px;
+}
+
+
+/* ==================================
+    ============= SLIDE 2 ==========
+ ==================================== */
+
+#ballooncontainer {
+    height: 100vh;
+    padding: 1em;
+    box-sizing: border-box;
+    display: none;
+    flex-wrap: wrap;
+    overflow: hidden;
+    position: fixed;
+  }
+  
+  .balloon {
+    height: 125px;
+    width: 105px;
+    border-radius: 75% 75% 70% 70%;
+    position: relative;
+  }
+  
+  .balloon:before {
+    content: "";
+    height: 75px;
+    width: 1px;
+    padding: 1px;
+    background-color: #FDFD96;
+    display: block;
+    position: absolute;
+    top: 125px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+  
+  .balloon:after {
+      content: "▲";
+      text-align: center;
+      display: block;
+      position: absolute;
+      color: inherit;
+      top: 120px;
+      left: 0;
+      right: 0;
+      margin: auto;
+  }
+  
+  @keyframes float {
+    from {transform: translateY(100vh);
+    opacity: 1;}
+    to {transform: translateY(-300vh);
+    opacity: 0;}
+  }

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Untuk Nevile</title>
+
+    <!-- font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- type it js -->
+    <script src="https://unpkg.com/typeit@8.6.6/dist/index.umd.js"></script>
+
+    <!-- ballon floating -->
+    <script src="ballon.js"></script>
+</head>
+
+<body>
+    <img id="wallpaper"
+        src="https://images.pexels.com/photos/586744/pexels-photo-586744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        alt="">
+
+    <!-- FLOATING BALLON -->
+    <div id="ballooncontainer">
+    </div>
+
+
+    <div class="container">
+        <div id="s1" class="slide1">
+            <p id="kalimat1">Hello, open the gift!!</p>
+            <div id="gKado" class="kosong">
+                <img src="https://feeldreams.github.io/kadoin.png" />
+            </div>
+        </div>
+        <div class="slide2">
+
+        </div>
+        <div class="slide3">
+
+        </div>
+
+    </div>
+    <script>
+        // ==================================
+        // *********** SLIDE 1 **************
+        // ==================================
+
+        setTimeout(gkado, 2000)
+        function gkado() {
+            document.getElementById("gKado").className = "kadopng";
+        }
+        var skalimat1 = kalimat1.innerHTML;
+        kalimat1.innerHTML = "";
+        new TypeIt("#kalimat1", {
+            strings: ["" + skalimat1], startDelay: 1, speed: 50, waitUntilVisible: true,
+            afterComplete: function () {
+                kalimat1.innerHTML = skalimat1;
+            },
+        }).go();
+
+
+        document.getElementById("gKado").onclick = function () {
+            s1.style = "transition: all 1s ease; transform: scale(0); ";
+            setTimeout(slide2, 0)
+        }
+
+        // ==================================
+        // *********** SLIDE 2 **************
+        // ==================================
+
+        function slide2() {
+            document.getElementById("ballooncontainer").style.display = "flex";
+        }
+    </script>
+
+</body>
+
+</html>
