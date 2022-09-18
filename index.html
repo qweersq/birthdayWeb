@@ -31,6 +31,9 @@
     <div id="ballooncontainer">
     </div>
 
+      <!-- Ganti Audio di sini --><audio src="https://qweersq.github.io/birthdayWeb/hbdjedagjedug.mp3" id="linkmp3"></audio>
+      <script>audio = new Audio('' + linkmp3.src);</script>
+    
 
     <div class="container">
         <div id="s1" class="slide1">
@@ -76,6 +79,7 @@
         // ==================================
 
         function slide2() {
+            audio.play();
             document.getElementById("ballooncontainer").style.display = "flex";
         }
     </script>
